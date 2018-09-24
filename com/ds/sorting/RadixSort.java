@@ -1,5 +1,8 @@
 package com.ds.sorting;
 
+import java.util.Arrays;
+import java.util.OptionalInt;
+
 import static com.ds.sorting.SortTest.test;
 
 public class RadixSort {
@@ -7,51 +10,41 @@ public class RadixSort {
     {
         test(RadixSort::sort);
     }
-    public static void sort(int[] data) {
 
-        if (data.length <= 1)
-            return;
-
+    private static int findMax(int data[])
+    { //expect data to be of length greater than zero.
         int max_value = data[0];
         for(int elem: data)
             if(max_value < elem)
                 max_value = elem;
 
-        int bit_mask=1;
-        while(bit_mask <= max_value) {
+        return max_value;
+    }
+    public static void sort(int[] data) {
+
+        if (data.length <= 1)
+            return;
+
+        int max_value = findMax(data);
+
+        int bit_mask = 1;
+        while (bit_mask <= max_value) {
             int zero_bit[] = new int[data.length], zero_index = 0;
             int one_bit[] = new int[data.length], one_index = 0;
 
-            for (int elem : data)
-            {
+            for (int elem : data) {
                 int bit = elem & bit_mask;
-                if (bit == 0)
-                {
+                if (bit == 0) {
                     zero_bit[zero_index] = elem;
                     zero_index++;
-                }
-                else
-                {
+                } else {
                     one_bit[one_index] = elem;
                     one_index++;
                 }
             }
-
-            int index = 0, data_index=0;
-            while(index <zero_index)
-            {
-                data[data_index]= zero_bit[index];
-                index++;
-                data_index++;
-            }
-
-            index = 0;
-            while(index <one_index)
-            {
-                data[data_index]= one_bit[index];
-                index++;
-                data_index++;
-            }
+            
+            System.arraycopy(zero_bit, 0, data, 0, zero_index);
+            System.arraycopy(one_bit, 0, data, zero_index, one_index);
 
             bit_mask = bit_mask << 1;
         }
