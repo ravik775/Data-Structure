@@ -12,7 +12,7 @@ public class BotomUpMergeSort {
             while(start_index < data.length)
             {
                 final int mid_index = start_index + width;
-                final int end_index = mid_index + width;
+                final int end_index = Math.min(mid_index + width, data.length);
                 merge(data, start_index, mid_index, end_index);
                 start_index = end_index;
             }

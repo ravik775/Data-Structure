@@ -16,8 +16,6 @@ public class BubbleSort {
 
     public static void main(String... strings)
     {
-
         test(BubbleSort::sort);
-
     }
 }
