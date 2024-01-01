@@ -1,8 +1,9 @@
 # Data Structure
 ## Table of Contents
 
-- [File or Folder 1](link_to_your_file_or_folder_1)
-- [File or Folder 2](link_to_your_file_or_folder_2)
+- [Data Structure](https://github.com/ravik775/Data-Structure/tree/29c6fd56609044c520027a479964c4ed51f4e3b9/data%20structures)
+  - Arrays
+  - Linked List 
 <!-- Add more links as needed -->
 
 ## About
