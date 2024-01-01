@@ -1,6 +1,7 @@
 # Data Structure
 ## Table of Contents
 
+- [Big O]
 - [Data Structure](https://github.com/ravik775/Data-Structure/tree/29c6fd56609044c520027a479964c4ed51f4e3b9/data%20structures)
   - Arrays
   - Linked List 
